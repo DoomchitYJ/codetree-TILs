@@ -20,6 +20,7 @@ for i in range(n):
         if cnt >= m:
             ans += 1
             cnt = 1
+            break
             
 # 세로
 for i in range(n):
@@ -34,5 +35,6 @@ for i in range(n):
         if cnt >= m:
             ans += 1
             cnt = 1
+            break
 
 print(ans)

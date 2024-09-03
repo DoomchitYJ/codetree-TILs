@@ -9,13 +9,11 @@ ans = 0
 
 # 가로
 for i in range(n):
-    prev = arr[i][0]
     cnt = 1
-    for j in range(1, n):
-        if arr[i][j] == prev:
+    for j in range(n-1):
+        if arr[i][j] == arr[i][j+1]:
             cnt += 1
         else:
-            prev = arr[i][j]
             cnt = 1
         if cnt >= m:
             ans += 1
@@ -24,13 +22,11 @@ for i in range(n):
             
 # 세로
 for i in range(n):
-    prev = arr[0][i]
     cnt = 1
-    for j in range(1, n):
-        if arr[j][i] == prev:
+    for j in range(n-1):
+        if arr[j][i] == arr[j+1][i]:
             cnt += 1
         else:
-            prev = arr[j][i]
             cnt = 1
         if cnt >= m:
             ans += 1

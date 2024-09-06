@@ -67,9 +67,9 @@ public class Main {
 
         for (int k=0; k<q; k++){
             int line = sc.nextInt();
-            String dir = sc.next();
+            char dir = sc.next().charAt(0);
             boolean ddir = true;
-            if (dir == "R") ddir = false;
+            if (dir == 'R') ddir = false;
             
             // System.out.print(line);
             // System.out.print(dir);                

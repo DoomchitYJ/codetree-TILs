@@ -31,7 +31,7 @@ public class Main {
 
         for (int i=0; i<3; i++){
             for (int j=0; j<n; j++){
-                System.out.printf("%d ", new_belt.get(3*i + j));
+                System.out.printf("%d ", new_belt.get(n*i + j));
             }
             System.out.printf("\n");
         }

@@ -25,19 +25,14 @@ public class Main {
         for (int i=r2-1; i>r1; i--){
             grid[i][c2-1] = grid[i-1][c2-1];
         }
-        grid[r1][c2-1] = tmp;
 
-        // for (int i=0; i<n; i++){
-        //     for (int j=0; j<m; j++){
-        //         System.out.printf("%d ", grid[i][j]);
-        //     }
-        //     System.out.printf("\n");
-        // } System.out.printf("\n");
+        grid[r1][c2-1] = tmp;
     }
 
     public static boolean isRange(int x, int y){
         return 0 <= x && x < n && 0 <= y && y < m;
     }
+
     public static void avg(int r1, int c1, int r2, int c2, int[][] ans_grid){
         int[] dx = {-1, 1, 0, 0};
         int[] dy = {0, 0, -1, 1};
@@ -69,17 +64,20 @@ public class Main {
                 grid[i][j] = sc.nextInt();
             }
         }
+        
         for (int i=0; i<q; i++){
             int r1 = sc.nextInt();
             int c1 = sc.nextInt();
             int r2 = sc.nextInt();
             int c2 = sc.nextInt();
+
             rotate(r1, c1, r2, c2);
             
             int[][] ans_grid = new int[100][100];
             for(int j = 0; j < grid.length; j++) {
 			    ans_grid[j] = grid[j].clone();
 		    }
+
             avg(r1, c1, r2, c2, ans_grid);
 
             for(int j= 0; j < grid.length; j++) {

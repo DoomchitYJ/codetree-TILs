@@ -10,7 +10,7 @@ public class Main {
     public static boolean get_area(int x, int y, int w, int h){
         for(int i=x; i<x+w; i++){
             for(int j=y; j<y+h; j++){
-                if (arr[i][j] < 0) return false;
+                if (arr[i][j] <= 0) return false;
             }
         }
         return true;

@@ -25,13 +25,6 @@ public class Main {
             grid[line-1][m-1] = tmp;
         }
 
-        // for (int i=0; i<n; i++){
-        //     for (int j=0; j<m; j++){
-        //         System.out.printf("%d ", grid[i][j]);                
-        //     }
-        //     System.out.printf("\n");
-        // }
-
         return !dir;
     }
 
@@ -52,7 +45,6 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        // 여기에 코드를 작성해주세요.
         Scanner sc = new Scanner(System.in);
 
         n = sc.nextInt();
@@ -69,23 +61,16 @@ public class Main {
             int line = sc.nextInt();
             char dir = sc.next().charAt(0);
             boolean ddir = true;
-            if (dir == 'R') ddir = false;
-            
-            // System.out.print(line);
-            // System.out.print(dir);                
-
-            // System.out.println(ddir);                
+            if (dir == 'R') ddir = false;           
 
             boolean new_dir_up = shift(line, ddir);
             boolean new_dir_down = new_dir_up;
 
             for (int i=line; i>0; i--) {
-                // System.out.println(i);
                 if (check(i, "up")) new_dir_up = shift(i-1, new_dir_up);
                 else break;
             }
             for (int i=line; i<n; i++) {
-                // System.out.println(i);
                 if (check(i, "down")) new_dir_down = shift(i+1, new_dir_down);
                 else break;
             }

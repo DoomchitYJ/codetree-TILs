@@ -69,7 +69,7 @@ public class Main {
             int line = sc.nextInt();
             String dir = sc.next();
             boolean ddir = true;
-            if (dir == "F") ddir = false;
+            if (dir == "R") ddir = false;
             
             // System.out.print(line);
             // System.out.print(dir);                

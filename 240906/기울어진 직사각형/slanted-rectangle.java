@@ -33,7 +33,7 @@ public class Main {
                 if(j > 0) {
                     ret += arr[i][j-1];
                     ret += arr[i+1][j];
-                }
+                } 
             }
 
             int[] dx = {-1, 0, 0, +1};
@@ -45,7 +45,7 @@ public class Main {
 
                 if(0<=nx && nx<n && 0<=ny && ny<n) {
                     ret += arr[nx][ny];
-                } 
+                } else return 0;
             }
 
             for(int i=x, j=y+1; j<n-1; j++){

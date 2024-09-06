@@ -27,9 +27,10 @@ public class Main {
         }
 
         for (int i=0; i<2; i++){
-            System.out.printf("%d ", new_belt.get(n*i));
-            System.out.printf("%d ", new_belt.get(n*i+1));
-            System.out.printf("%d\n", new_belt.get(n*i+2));
+            for (int j=0; j<n; j++){
+                System.out.printf("%d ", new_belt.get(n*i + j));
+            }
+            System.out.printf("\n");
         }
     }
 }

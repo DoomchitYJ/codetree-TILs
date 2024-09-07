@@ -16,28 +16,28 @@ public class Main {
             int ny = c - 1;
             int tmp = grid[r - 1][c - 1];
 
-            for (int i=0; i<m4; i++){
+            for (int i=0; i<m1; i++){
                 nx += dx[0];
                 ny += dy[0];
                 if (inRange(nx, ny)) {
                     grid[nx - dx[0]][ny - dy[0]] = grid[nx][ny];
                 }
             }
-            for (int i=0; i<m3; i++){
+            for (int i=0; i<m2; i++){
                 nx += dx[1];
                 ny += dy[1];
                 if (inRange(nx, ny)) {
                     grid[nx - dx[1]][ny - dy[1]] = grid[nx][ny];
                 }
             }
-            for (int i=0; i<m2; i++){
+            for (int i=0; i<m3; i++){
                 nx += dx[2];
                 ny += dy[2];
                 if (inRange(nx, ny)) {
                     grid[nx - dx[2]][ny - dy[2]] = grid[nx][ny];
                 }
             }
-            for (int i=0; i<m1-1; i++){
+            for (int i=0; i<m4-1; i++){
                 nx += dx[3];
                 ny += dy[3];
                 if (inRange(nx, ny)) {

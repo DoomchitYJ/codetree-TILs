@@ -11,10 +11,10 @@ public class Main {
     public static void dfs(int x, int y){
         if (x == n-1 && y == m-1) ans = 1;
         if (ans == 1) return;
-        
+
         for (int i=0; i<2; i++){
             int nx = x + dx[i]; int ny = y + dy[i];
-            if (nx < n && ny < m && grid[nx][ny] == 1) dfs(nx, ny);
+            if (nx < n && ny < m && grid[nx][ny] == 1 && ans != 1) dfs(nx, ny);
         }
     }
     public static void main(String[] args) {

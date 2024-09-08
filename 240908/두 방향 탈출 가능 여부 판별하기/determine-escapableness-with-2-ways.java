@@ -7,14 +7,16 @@ public class Main {
     public static int[] dx = {1, 0};
     public static int[] dy = {0, 1};
     public static int[][] grid = new int[100][100];
+    public static boolean[][] visited = new boolean[100][100];
 
     public static void dfs(int x, int y){
+        visited[x][y] = true;
         if (x == n-1 && y == m-1) ans = 1;
         if (ans == 1) return;
 
         for (int i=0; i<2; i++){
             int nx = x + dx[i]; int ny = y + dy[i];
-            if (nx < n && ny < m && grid[nx][ny] == 1 && ans != 1) dfs(nx, ny);
+            if (nx < n && ny < m && grid[nx][ny] == 1 && visited[nx][ny] != true) dfs(nx, ny);
         }
     }
     public static void main(String[] args) {

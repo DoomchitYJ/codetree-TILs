@@ -46,7 +46,7 @@ public class Main {
             visited = new boolean[50][50];
         }
 
-        int ans = 0;
+        int ans = 1;
         int ans_cnt = 0;
         for (int i=1; i<=max_k; i++) {
             if (cnt[i] > ans_cnt) {

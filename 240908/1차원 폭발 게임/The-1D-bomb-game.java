@@ -7,6 +7,8 @@ public class Main {
     public static ArrayList bombRange = new ArrayList();
 
     public static boolean bomb(){
+        if (origin_size == 0) return false;
+
         int bomb_num = 0;
         int cnt = 1;
         for (int i=1; i<origin_size; i++){
@@ -27,7 +29,7 @@ public class Main {
             size -= cnt;
             bomb_num++;
         }
-
+        
         for (int i=0; i<origin_size; i++){
             new_arr[i] = arr[i];
         }

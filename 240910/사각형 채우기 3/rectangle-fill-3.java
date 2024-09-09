@@ -7,6 +7,7 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         n = sc.nextInt();
 
+        dp[0] = 1;
         dp[1] = 2;
         dp[2] = 7;
 

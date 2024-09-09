@@ -2,7 +2,7 @@ import java.util.*;
 
 public class Main {
     public static int n;
-    public static int[] dp = new int[1001];
+    public static long[] dp = new long[1001];
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         n = sc.nextInt();

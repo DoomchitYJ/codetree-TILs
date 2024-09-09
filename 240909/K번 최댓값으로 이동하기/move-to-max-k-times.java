@@ -42,6 +42,9 @@ public class Main {
                             row = nx; col = ny;
                             if (ny < col) col = ny;
                         }
+                        else if (nx == row) {
+                            col = Math.min(col, ny);
+                        }
                         // System.out.printf("after %d, %d ... %d\n", row, col, max);
                     }
 

@@ -4,9 +4,11 @@ import java.util.*;
 
 public class Main {
     public static double n;
-    public static int m, ans, ans_t;
+    public static int m;
     public static int[][] grid = new int[200][200];
 
+    public static ArrayList ans = new ArrayList();
+    public static ArrayList ans_t = new ArrayList();
     public static int[] dx = {0, 1, 0, -1};
     public static int[] dy = {1, 0, -1, 0};
     public static int[] length = new int[4];
@@ -28,10 +30,13 @@ public class Main {
                 length[i] -= 2;
             }
             // System.out.println(t);
-            if (t == Math.ceil(n/2)-1) {
-                ans = cnt;
-                ans_t = t;
-            }
+            ans.add(cnt);
+            ans_t.add(t);
+
+            // if (t == Math.ceil(n/2)-1) {
+            //     ans = cnt;
+            //     ans_t = t;
+            // }
         }
     }
     public static void main(String[] args) {
@@ -46,7 +51,12 @@ public class Main {
         }
         length[0] = m - 2; length[1] = (int)(n - 2); length[2] = m - 2; length[3] = (int)(n - 2) - 1;
         melt();
-        System.out.printf("%d %d", ans_t, ans);
-        // 여기에 코드를 작성해주세요.
+
+        for (int i=ans.size()-1; i>=0; i--){
+            if ((int)ans.get(i) != 0) {
+                System.out.printf("%d %d", i+1, ans.get(i));
+                break;
+            }
+        }
     }
 }

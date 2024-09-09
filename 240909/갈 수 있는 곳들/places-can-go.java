@@ -51,6 +51,7 @@ public class Main {
             if (!visited[r][c]){
                 visited[r][c] = true;
                 q.add(new Pair(r,c));
+                cnt++;
                 bfs();
             }
         }

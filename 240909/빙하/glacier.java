@@ -8,14 +8,11 @@ public class Main {
     public static int[][] grid = new int[200][200];
 
     public static ArrayList ans = new ArrayList();
-    public static ArrayList ans_t = new ArrayList();
     public static int[] dx = {0, 1, 0, -1};
     public static int[] dy = {1, 0, -1, 0};
     public static int[] length = new int[4];
 
     public static void melt(){
-        // System.out.println(Math.ceil(n/2));
-
         for (int t=1; t<Math.ceil(n/2); t++) {
             int x = t; int y = t;
 
@@ -25,18 +22,16 @@ public class Main {
             for (int i = 0; i<4; i++){
                 for (int j=1; j<length[i]; j++){
                     x += dx[i]; y += dy[i];
-                    if (grid[x][y] == 1) cnt++;
+                    if (grid[x][y] == 1) {
+                        cnt++;
+                        // System.out.printf("%d, %d...%d\n", x, y, cnt);
+                    }
                 }
+                if (i<2 && length[i+1] == 1) break;
                 length[i] -= 2;
             }
             // System.out.println(t);
             ans.add(cnt);
-            ans_t.add(t);
-
-            // if (t == Math.ceil(n/2)-1) {
-            //     ans = cnt;
-            //     ans_t = t;
-            // }
         }
     }
     public static void main(String[] args) {

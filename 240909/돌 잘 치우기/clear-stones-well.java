@@ -11,9 +11,10 @@ class Pair {
     }
 }
 public class Main {
-    public static int n, k, m, r, c, cnt;
+    public static int n, k, m, r, c;
     public static int[][] grid = new int[100][100];
     public static boolean[][] visited = new boolean[100][100];
+    public static boolean[][] ans = new boolean[100][100];
 
     public static ArrayList<Pair> stonePos = new ArrayList<>();
     public static ArrayList<Pair> selected = new ArrayList<>();
@@ -35,13 +36,11 @@ public class Main {
                 if (0 <= nx && nx < n && 0<= ny && ny < n && visited[nx][ny] != true && grid[nx][ny] == 0){
                     // System.out.printf("gogo %d, %d ... \n", nx, ny);
                     visited[nx][ny] = true;
+                    ans[nx][ny] = true;
                     q.add(new Pair(nx, ny));
-                    cnt++;
                 }
             }
         }
-        cnt_arr.add(cnt);
-        cnt = 0;
     }
     public static void comb(int start, int num){
         if (num == 0) {
@@ -61,6 +60,14 @@ public class Main {
             }
             visited = new boolean[100][100];
             q.add(new Pair(r, c));
+            int cnt = 0;
+            for (int i=0; i<n; i++){
+                for (int j=0; j<n; j++){
+                    if (ans[i][j] == true) cnt++;
+                }
+            }
+            cnt_arr.add(cnt);
+            ans = new boolean[100][100];
 
             return;
         } else{

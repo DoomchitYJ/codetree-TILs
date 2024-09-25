@@ -14,16 +14,7 @@ public class Main {
 
         dp[0][0] = 1;
         for (int i=1; i<n; i++) {
-            if (grid[i][1] > grid[0][0]) dp[i][1] = 2;
-            else dp[i][1] = 0;
-        }
-        for (int j=2; j<n; j++) {
-            if (grid[1][j] > grid[0][0]) dp[1][j] = 2;
-            else dp[1][j] = 0;
-        }
-
-        for (int i=2; i<n; i++) {
-            for (int j=2; j<n; j++){
+            for (int j=1; j<m; j++){
                 if (grid[i][j] <= grid[0][0]) continue;
                 
                 dp[i][j] = 2;
@@ -39,12 +30,11 @@ public class Main {
         }
 
         // for (int i=0; i<n; i++) {
-        //     for (int j=0; j<n; j++) {
+        //     for (int j=0; j<m; j++) {
         //         System.out.printf("%d ", dp[i][j]);
         //     }
         //     System.out.println();
         // }
         System.out.println(ans);
-        // 여기에 코드를 작성해주세요.
     }
 }

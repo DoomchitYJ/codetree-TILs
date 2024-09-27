@@ -36,11 +36,7 @@ public class Main {
                 ans = Math.max(cnt1+cnt2, ans);
             }
 
-            // for (int j=0; j<n; j++) System.out.printf("%d ", dp1[j]);
-            // System.out.println();
-            // for (int j=0; j<n; j++) System.out.printf("%d ", dp2[j]);
-            // System.out.println();
-            dp2 = new int[1000];
+            // dp2 = new int[1000];
         }
         System.out.println(ans-1);
     }

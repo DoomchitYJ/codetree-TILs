@@ -1,24 +1,25 @@
 import java.util.*;
 
 public class Main {
-    public static class Pair implements Comparable<Pair> {
+    public static class Triple implements Comparable<Triple> {
         long first, second;
+        int third;
 
-        public Pair() {}
+        public Triple() {}
 
-        public Pair(long x, long y) {
-            this.first = x; this.second = y;
+        public Triple(long x, long y, int p) {
+            this.first = x; this.second = y; this.third = p;
         }
 
         @Override
-        public int compareTo(Pair p) {
-            return Long.compare(this.first, p.first);
+        public int compareTo(Triple t) {
+            return Long.compare(this.first, t.first);
         }
     }
 
     public static int n;
     public static long ans;
-    public static Pair[] arr = new Pair[1000];
+    public static Triple[] arr = new Triple[1000];
     public static int[] pay = new int[1000];
     public static long[] dp = new long[1000];
 
@@ -29,17 +30,16 @@ public class Main {
             long s = sc.nextLong();
             long e = sc.nextLong();
             int p = sc.nextInt();
-            arr[i] = new Pair(s, e);
-            pay[i] = p;
+            arr[i] = new Triple(s, e, p);
         }
 
         Arrays.sort(arr, 0, n);
         for (int i=0; i<n; i++) {
-            dp[i] = pay[i];
+            dp[i] = arr[i].third;
             long a = arr[i].first;
             for (int j=0; j<i; j++) {
                 long b = arr[j].second;
-                if (a > b) dp[i] = Math.max(dp[j]+pay[j], dp[i]);
+                if (a > b) dp[i] = Math.max(dp[j]+arr[i].third, dp[i]);
             }
         }
         for (int i=0; i<n; i++) {

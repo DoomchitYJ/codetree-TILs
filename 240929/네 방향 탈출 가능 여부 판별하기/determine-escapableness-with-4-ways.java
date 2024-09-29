@@ -45,6 +45,7 @@ public class Main {
         }
 
         q.add(new Pair(0, 0));
+        visited[0][0] = true;
         bfs();
 
         if (visited[n-1][n-1]) System.out.print(1);

@@ -35,6 +35,7 @@ public class Main {
                 }
             }
         }
-        System.out.printf("%d %d", arr_cnt.size(), Collections.max(arr_cnt));
+        if (arr_cnt.size() != 0) System.out.printf("%d %d", arr_cnt.size(), Collections.max(arr_cnt));
+        else System.out.printf("0 0");
     }
 }

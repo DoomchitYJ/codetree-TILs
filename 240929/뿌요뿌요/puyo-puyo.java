@@ -7,7 +7,7 @@ public class Main {
     public static int[] dx = {-1, 1, 0, 0};
     public static int[] dy = {0, 0, -1, 1};
     public static ArrayList<Integer> arr_cnt = new ArrayList<>(); 
-
+    
     public static void dfs(int x, int y) {
         visited[x][y] = true;
 
@@ -30,12 +30,13 @@ public class Main {
             for (int j=0; j<n; j++) {
                 if (!visited[i][j]) {
                     dfs(i, j);
-                    if (cnt >= 4) arr_cnt.add(cnt);
+                    arr_cnt.add(cnt);
                     cnt = 1;
                 }
             }
         }
-        if (arr_cnt.size() != 0) System.out.printf("%d %d", arr_cnt.size(), Collections.max(arr_cnt));
-        else System.out.printf("0 0");
+        int ans = 0;
+        for (int c : arr_cnt) if (c >= 4) ans++;
+        System.out.printf("%d %d", ans, Collections.max(arr_cnt));
     }
 }

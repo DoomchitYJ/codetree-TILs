@@ -1,5 +1,13 @@
 import java.util.*;
 
+class Pair {
+    int first, second;
+
+    public Pair (int x, int y) {
+        this.first = x; this.second = y;
+    }
+}
+
 public class Main {
     public static int n, m;
     public static int[][] grid = new int[100][100];
@@ -7,14 +15,6 @@ public class Main {
     public static int[] dx ={-1, 1, 0, 0}; 
     public static int[] dy ={0, 0, -1, 1};
     public static Queue<Pair> q = new LinkedList<>();
-
-    public static class Pair {
-        int first, second;
-
-        public Pair (int x, int y) {
-            this.first = x; this.second = y;
-        }
-    }
 
     public static void bfs() {
         while(!q.isEmpty()) {

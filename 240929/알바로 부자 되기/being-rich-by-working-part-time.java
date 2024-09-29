@@ -33,6 +33,7 @@ public class Main {
             pay[i] = p;
         }
 
+        Arrays.sort(arr, 0, n);
         for (int i=0; i<n; i++) {
             dp[i] = pay[i];
             long a = arr[i].first;

@@ -31,7 +31,7 @@ public class Main {
                 if (!visited[i][j]) {
                     dfs(i, j);
                     if (cnt >= 4) arr_cnt.add(cnt);
-                    cnt = 0;
+                    cnt = 1;
                 }
             }
         }

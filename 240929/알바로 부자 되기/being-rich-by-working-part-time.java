@@ -39,7 +39,7 @@ public class Main {
             long a = arr[i].first;
             for (int j=0; j<i; j++) {
                 long b = arr[j].second;
-                if (a < b) dp[i] = Math.max(dp[j]+pay[j], dp[i]);
+                if (a > b) dp[i] = Math.max(dp[j]+pay[j], dp[i]);
             }
         }
         for (int i=0; i<n; i++) {

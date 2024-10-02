@@ -1,7 +1,7 @@
 import java.util.*;
 
 public class Main {
-    public static int n, m, ans;
+    public static int n, m, ans = -1;
     public static int[][] grid = new int[20][20];
 
     public static boolean check(int x1, int y1, int x2, int y2) {
